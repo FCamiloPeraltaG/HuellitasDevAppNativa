@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="24dp">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/Logo_Huellitas"
+                android:layout_gravity="center"
+                android:contentDescription="Logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingresar"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:textColor="#86B98E"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Por favor ingresa tu credenciales para continuar"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:textColor="#808080"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btnFacebook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Facebook"
+                    android:drawableLeft="@drawable/ic_facebook"
+                    android:background="@drawable/bg_social_button"
+                    android:textColor="#000000"
+                    android:padding="10dp"/>
+
+                <Space
+                    android:layout_width="12dp"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnGoogle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Google"
+                    android:drawableLeft="@drawable/ic_google"
+                    android:background="@drawable/bg_social_button"
+                    android:textColor="#000000"
+                    android:padding="10dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="o"
+                    android:textSize="14sp"
+                    android:textColor="#808080"
+                    android:padding="8dp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="Correo electrónico"
+                android:text="fcperalta@ucompensar.edu.co"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/bg_input"
+                android:padding="14dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"/>
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:background="@drawable/bg_input"
+                android:padding="14dp"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contraseña olvidada"
+                android:textSize="13sp"
+                android:textColor="#808080"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="end"/>
+
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingresar"
+                android:background="@drawable/bg_button_green"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿No tienes cuenta? "
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:ellipsize="end"
+                android:singleLine="true"/>
+
+            <TextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrate"
+                android:textColor="#86B98E"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
