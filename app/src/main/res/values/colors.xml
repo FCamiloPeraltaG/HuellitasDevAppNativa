@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="verde_principal">#9AC78B</color>
-    <color name="naranja_principal">#FD6E2E</color>
+    <color name="negro">#FF000000</color>
+    <color name="blanco">#FFFFFFFF</color>
+    <color name="color_primario">#9AC78B</color>
+    <color name="color_secundario">#FD6E2E</color>
+    <color name="gris">#7C8BA0</color>
     <color name="bg_inputs">#F5F9FE</color>
+
 
 </resources>
