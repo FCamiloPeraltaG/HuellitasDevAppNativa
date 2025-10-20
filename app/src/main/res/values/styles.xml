@@ -2,11 +2,14 @@
 
     <!-- Textos -->
     <style name="TitleText">
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#86B98E</item>
         <item name="android:layout_marginTop">12dp</item>
+
+        <item name="android:fontFamily">@font/poppins_bold</item>
+
     </style>
 
     <style name="SubtitleText">
@@ -14,6 +17,8 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">#808080</item>
         <item name="android:layout_marginTop">4dp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+
     </style>
 
     <style name="LinkText">
@@ -35,10 +40,12 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">@drawable/bg_input</item>
-        <item name="android:padding">14dp</item>
+        <item name="android:padding">18dp</item>
         <item name="android:textColor">@color/negro</item>
         <item name="android:textColorHint">@color/gris</item>
         <item name="cornerRadius">28dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <!-- Botones -->
@@ -48,7 +55,11 @@
         <item name="android:backgroundTint">@color/color_primario</item>
         <item name="android:textColor">@color/blanco</item>
         <item name="android:layout_marginTop">20dp</item>
+        <item name="android:paddingVertical">18dp</item>
         <item name="cornerRadius">14dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+
     </style>
 
 
@@ -59,6 +70,7 @@
         <item name="android:backgroundTint">@color/bg_inputs</item>
         <item name="android:textColor">@color/negro</item>
         <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
 </resources>
