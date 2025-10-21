@@ -3,4 +3,10 @@
     <string name="login_title">Iniciar Sesión</string>
     <string name="login_subtitle">Para registrarte ingresa los siguientes datos</string>
     <string name="login_buton">Ingresar</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="orders">Pedidos</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="home">Inicio</string>
+    <string name="shopping_cart">Carrito de compras</string>
+    <string name="profile">Perfil</string>
 </resources>
