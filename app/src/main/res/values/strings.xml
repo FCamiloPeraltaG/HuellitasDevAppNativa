@@ -10,9 +10,11 @@
     <string name="dont_have_account">¿No tienes cuenta?</string>
     <string name="alredy_have_account">¿Ya tienes una cuenta?</string>
     <string name="password_label">Contraseña</string>
-    <string name="lost_password">¿Olvidaste tu contraseña?</string>
     <string name="register_buton">Crear cuenta</string>
     <string name="Google_label">Google</string>
     <string name="Facebook_label">Facebook</string>
     <string name="o_label">o</string>
+    <string name="forgot_password">Contraseña olvidada</string>
+
+
 </resources>
