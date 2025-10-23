@@ -6,6 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 class LoginActivity : AppCompatActivity(){
     override fun onCreate(savedInstance: Bundle?){
         super.onCreate(savedInstance)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.fragment_login)
     }
 }

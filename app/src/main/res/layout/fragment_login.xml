@@ -18,6 +18,13 @@
             android:src="@mipmap/logo_huellitas" />
 
         <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleText"
+            android:text="@string/login_title" />
+
+        <TextView
             android:id="@+id/txtSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +42,7 @@
             <Button
                 android:id="@+id/btnFacebook"
                 style="@style/SocialButton"
-                android:text="Facebook"
+                android:text="@string/Facebook_label"
                 android:drawableLeft="@drawable/icon_facebook"/>
 
             <Space
@@ -45,7 +52,7 @@
             <Button
                 android:id="@+id/btnGoogle"
                 style="@style/SocialButton"
-                android:text="Google"
+                android:text="@string/Google_label"
                 android:drawableLeft="@drawable/icon_google"/>
 
         </LinearLayout>
@@ -66,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="o"
+                android:text="@string/o_label"
                 android:textSize="14sp"
                 android:textColor="#808080"
                 android:padding="8dp"/>
@@ -83,7 +90,7 @@
             android:id="@+id/editTextEmail"
             style="@style/InputField"
             android:layout_marginTop="20dp"
-            android:hint="Correo electrónico"
+            android:hint="@string/email_label"
             android:text=""
             android:inputType="textEmailAddress"/>
 
@@ -91,12 +98,12 @@
             android:id="@+id/editTextPassword"
             style="@style/InputField"
             android:layout_marginTop="12dp"
-            android:hint="Contraseña"
+            android:hint="@string/password_label"
             android:inputType="textPassword"/>
 
         <TextView
             android:id="@+id/txtForgotPassword"
-            android:text="Contraseña olvidada"
+            android:text="@string/forgot_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -110,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="¿No tienes cuenta?"
+            android:text="@string/dont_have_account"
             android:textColor="#000000"
             android:textSize="14sp" />
 
