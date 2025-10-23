@@ -13,7 +13,7 @@
     <string name="register_subtitle">Para registrarte ingresa los siguientes datos</string>
     <string name="name_label">Nombre</string>
     <string name="email_label">Correo electrónico</string>
-    <string name="dont_have_account">¿No tienes cuenta?</string>
+    <string name="dont_have_account">¿No tienes cuenta? Haz click aquí</string>
     <string name="alredy_have_account">¿Ya tienes una cuenta?</string>
     <string name="password_label">Contraseña</string>
     <string name="register_buton">Crear cuenta</string>
@@ -25,4 +25,6 @@
     <string name="password_recovery_subtitle">Por favor ingresa tu correo electrónico para recuperar tu contraseña</string>
     <string name="password_recovery_button">Enviar correo</string>
     <string name="back_button_description">Volver</string>
+    <string name="lastName_label">Apellido</string>
+    <string name="address_label">Dirección</string>
 </resources>

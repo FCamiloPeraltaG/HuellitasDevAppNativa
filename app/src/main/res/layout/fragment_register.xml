@@ -90,9 +90,25 @@
             android:id="@+id/editTextName"
             style="@style/InputField"
             android:layout_marginTop="20dp"
-            android:hint="@string/email_label"
+            android:hint="@string/name_label"
             android:text=""
             android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/editTextLastName"
+            style="@style/InputField"
+            android:layout_marginTop="20dp"
+            android:hint="@string/lastName_label"
+            android:text=""
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            style="@style/InputField"
+            android:layout_marginTop="20dp"
+            android:hint="@string/address_label"
+            android:text=""
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/editTextEmail"
@@ -117,6 +133,7 @@
             android:text="@string/register_buton"/>
 
         <TextView
+            android:id="@+id/loginText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

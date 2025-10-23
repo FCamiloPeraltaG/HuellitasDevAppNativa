@@ -9,13 +9,14 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.huelllitas.fragments.LoginFragment
+import com.example.huelllitas.fragments.RecoveryPasswordFragment
+import com.example.huelllitas.fragments.RegisterFragment
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var header: View
     private lateinit var footer: View
 
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun updateMenuVisibility(currentFragment: Fragment?) {
         val current = supportFragmentManager.findFragmentById(R.id.fragment_content)
-        val hide = current is LoginFragment
+        val hide = current is LoginFragment || current is RegisterFragment || current is RecoveryPasswordFragment
 
         findViewById<View>(R.id.header_container).visibility = if (hide) View.GONE else View.VISIBLE
         findViewById<View>(R.id.bottom_navigation).visibility = if (hide) View.GONE else View.VISIBLE
