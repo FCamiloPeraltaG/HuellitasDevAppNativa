@@ -15,6 +15,12 @@
     <string name="Facebook_label">Facebook</string>
     <string name="o_label">o</string>
     <string name="forgot_password">Contraseña olvidada</string>
-
+    <string name="password_recovery_title">Contraseña olvidada</string>
+    <string name="password_recovery_subtitle">Por favor ingresa tu correo electrónico para recuperar tu contraseña</string>
+    <string name="orders">Órdenes</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="password_recovery_button">Enviar correo</string>
+    <string name="back_button_description">Volver</string>
 
 </resources>
