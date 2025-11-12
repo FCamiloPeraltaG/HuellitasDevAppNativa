@@ -1,12 +1,12 @@
 package com.example.huelllitas
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.huelllitas.R
 import androidx.fragment.app.FragmentManager
 import com.example.huelllitas.fragments.LoginFragment
 import com.example.huelllitas.fragments.RecoveryPasswordFragment

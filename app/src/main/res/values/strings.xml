@@ -26,5 +26,8 @@
     <string name="password_recovery_button">Enviar correo</string>
     <string name="back_button_description">Volver</string>
     <string name="lastName_label">Apellido</string>
+    <string name="phone_label">Teléfono</string>
     <string name="address_label">Dirección</string>
+    <string name="featured">Recomendado</string>
+    <string name="see_all">Ver todo</string>
 </resources>
