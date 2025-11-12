@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1080398941603",
+    "project_id": "huelllitas",
+    "storage_bucket": "huelllitas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080398941603:android:b7650f4270587209949e16",
+        "android_client_info": {
+          "package_name": "com.example.huelllitas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080398941603-ddbg9e2ol8jt7b2tg0d90o743robvuou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA83JiMxHOUrgDK_yNHrsWA14oLf4gx92E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080398941603-ddbg9e2ol8jt7b2tg0d90o743robvuou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
