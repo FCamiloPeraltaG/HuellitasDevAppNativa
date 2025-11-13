@@ -3,7 +3,7 @@
     <string name="login_title">Iniciar Sesión</string>
     <string name="login_subtitle">Para iniciar sesión, ingresa los siguientes datos</string>
     <string name="login_buton">Ingresar</string>
-    <string name="edit_profile">Editar perfil</string>
+    <string name="edit_profile">Perfil</string>
     <string name="orders">Pedidos</string>
     <string name="logout">Cerrar sesión</string>
     <string name="home">Inicio</string>
@@ -35,4 +35,7 @@
     <string name="imageProfile">Imagen del perfil\n</string>
     <string name="product_image_desc">Descripcion del producto</string>
     <string name="add_to_favorites">Añadir a favoritos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_text">Inicio</string>
 </resources>

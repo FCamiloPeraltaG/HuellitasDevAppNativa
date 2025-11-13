@@ -104,8 +104,9 @@ class RegisterFragment : Fragment() {
         return true
     }
     private fun saveUser(name: String,lastName: String,address: String,email: String,password: String) {
-
+        preferencesManager.saveLoginType("manual")
         preferencesManager.saveUser(name,lastName,address,email,password)
+
     }
     private fun navigateToLogin() {
         parentFragmentManager.beginTransaction()

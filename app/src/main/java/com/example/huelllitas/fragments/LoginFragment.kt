@@ -67,10 +67,6 @@ class LoginFragment : Fragment() {
 
         return view
     }
-
-
-
-
     private fun initViews(view: View) {
         emailInput = view.findViewById(R.id.editTextEmail)
         passwordInput = view.findViewById(R.id.editTextPassword)
@@ -158,7 +154,17 @@ private fun firebaseAuthWithGoogle(idToken: String) {
 val credential = GoogleAuthProvider.getCredential(idToken,null)
 auth.signInWithCredential(credential)
     .addOnCompleteListener(requireActivity()){ task ->
-        if (task.isSuccessful){
+        if (task.isSuccessful) {
+            val account = GoogleSignIn.getLastSignedInAccount(requireContext())
+            account?.let {
+                preferencesManager.saveGoogleUserData(
+                    name = it.displayName ?: "",
+                    email = it.email ?: "",
+                    photoUrl = it.photoUrl?.toString()
+                )
+            }
+
+            preferencesManager.saveLoginType("google")
             Log.d(TAG,"signInWithCredential:success")
             Toast.makeText(context,"Bienvenido", Toast.LENGTH_SHORT).show()
             parentFragmentManager.beginTransaction()
@@ -184,20 +190,20 @@ auth.signInWithCredential(credential)
 //    }
 
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
-super.onActivityResult(requestCode, resultCode, data)
+    super.onActivityResult(requestCode, resultCode, data)
 
-if(requestCode == RC_SIGN_IN){
-    val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-    try {
-        val accountData = task.getResult(ApiException::class.java)!!
-        Log.d(TAG,"firebaseAuthWithGoogle:"+ accountData.id)
-        firebaseAuthWithGoogle(accountData.idToken!!)
-    } catch (e: ApiException){
-        Log.w(TAG, "Google sign in failed", e)
-        Toast.makeText(context,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
+    if(requestCode == RC_SIGN_IN){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val accountData = task.getResult(ApiException::class.java)!!
+                Log.d(TAG,"firebaseAuthWithGoogle:"+ accountData.id)
+                firebaseAuthWithGoogle(accountData.idToken!!)
+            } catch (e: ApiException){
+                Log.w(TAG, "Google sign in failed", e)
+                Toast.makeText(context,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
-}
-}
 }
 
 

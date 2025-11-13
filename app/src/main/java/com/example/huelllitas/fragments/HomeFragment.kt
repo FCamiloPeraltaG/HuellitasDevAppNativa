@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.huelllitas.R
-import com.example.huelllitas.adapters.FeaturedProductAdapter // <-- IMPORTAR NUEVO ADAPTADOR
+import com.example.huelllitas.adapters.FeaturedProductAdapter
 import com.example.huelllitas.adapters.ProductAdapter
 import com.example.huelllitas.model.Product
 import com.google.android.material.tabs.TabLayout
@@ -17,14 +17,12 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
-    // --- VISTAS PARA PRODUCTOS RECOMENDADOS ---
     private lateinit var recommendedProductsRecyclerView: RecyclerView
     private lateinit var productAdapter: ProductAdapter
 
-    // --- NUEVAS VISTAS PARA EL CARRUSEL DESTACADO ---
     private lateinit var featuredCarousel: ViewPager2
     private lateinit var featuredAdapter: FeaturedProductAdapter
-    private lateinit var dotsIndicator: TabLayout // <-- El indicador de puntos
+    private lateinit var dotsIndicator: TabLayout
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,10 +34,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inicializar y configurar el carrusel destacado
         initFeaturedCarousel(view)
 
-        // Inicializar y configurar la cuadrícula de recomendados
         initRecommendedGrid(view)
     }
 
@@ -51,9 +47,8 @@ class HomeFragment : Fragment() {
         featuredAdapter = FeaturedProductAdapter(featuredList)
         featuredCarousel.adapter = featuredAdapter
 
-        // Esto conecta el ViewPager2 con el indicador de puntos para que se muevan juntos
         TabLayoutMediator(dotsIndicator, featuredCarousel) { tab, position ->
-            // No necesitamos hacer nada aquí, el mediador se encarga de todo
+
         }.attach()
     }
 
@@ -66,16 +61,14 @@ class HomeFragment : Fragment() {
         recommendedProductsRecyclerView.adapter = productAdapter
     }
 
-    // Datos de ejemplo PARA EL CARRUSEL
     private fun createFeaturedProducts(): List<Product> {
         return listOf(
             Product(10, "Correa para perro", "$45.00", R.drawable.correa_perro),
-            Product(11, "Juguete Interactivo", "$22.00", R.drawable.plato_interactivo), // Usa otra imagen
-            Product(12, "Cama Ortopédica", "$75.00", R.drawable.cama_ortopedica)  // Usa otra imagen
+            Product(11, "Juguete Interactivo", "$22.00", R.drawable.plato_interactivo),
+            Product(12, "Cama Ortopédica", "$75.00", R.drawable.cama_ortopedica)
         )
     }
 
-    // Datos de ejemplo PARA LA CUADRÍCULA
     private fun createSampleData(): List<Product> {
         return listOf(
             Product(1, "Bolsas desechos para...", "$15.00", R.drawable.bolsas_desechos),

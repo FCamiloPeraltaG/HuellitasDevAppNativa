@@ -9,19 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <!-- Botón de atras -->
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/back"
-            android:background="@drawable/ic_atras"
-            android:backgroundTint="@color/primary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profileImageCard"
@@ -32,7 +21,7 @@
             app:cardElevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/backButton">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/profileImage"
@@ -41,9 +30,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/profile_image"
                 android:contentDescription="@string/profile_image_desc" />
-
         </androidx.cardview.widget.CardView>
-
 
         <!-- Card del formulario -->
         <androidx.cardview.widget.CardView
@@ -60,104 +47,83 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profileImageCard">
 
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="96dp">
-
+            <!-- Contenido dentro del card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="20dp">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#E0E0E0" />
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="@string/profile"
-                    android:textColor="@color/primary"
-                    android:textSize="28sp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#E0E0E0" />
-
-
-                <EditText
-                    android:id="@+id/editName"
-                    style="@style/InputField"
                     android:layout_marginTop="20dp"
-                    android:hint="@string/name_label"
-                    android:text=""
-                    android:inputType="textPersonName"/>
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editLastName"
-                    style="@style/InputField"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/lastName_label"
-                    android:text=""
-                    android:inputType="textPersonName"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0" />
 
-                <EditText
-                    android:id="@+id/editAddress"
-                    style="@style/InputField"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/address_label"
-                    android:text=""
-                    android:inputType="text"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="@string/profile"
+                        android:textColor="@color/primary"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editEmail"
-                    style="@style/InputField"
-                    android:layout_marginTop="20dp"
-                    android:hint="@string/email_label"
-                    android:text=""
-                    android:inputType="textEmailAddress"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#E0E0E0" />
 
-                <EditText
-                    android:id="@+id/editPassword"
-                    style="@style/InputField"
-                    android:layout_marginTop="12dp"
-                    android:hint="@string/password_label"
-                    android:inputType="textPassword"/>
+                    <EditText
+                        android:id="@+id/editName"
+                        style="@style/InputField"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/name_label"
+                        android:inputType="textPersonName" />
 
+                    <EditText
+                        android:id="@+id/editLastName"
+                        style="@style/InputField"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/lastName_label"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/editAddress"
+                        style="@style/InputField"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/address_label"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/editEmail"
+                        style="@style/InputField"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/email_label"
+                        android:inputType="textEmailAddress" />
+
+                    <EditText
+                        android:id="@+id/editPassword"
+                        style="@style/InputField"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/password_label"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonLogin"
+                    style="@style/PrimaryButton"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/editProfile" />
             </LinearLayout>
-
-            <Button
-                android:id="@+id/buttonLogin"
-                style="@style/PrimaryButton"
-                android:text="@string/editProfile" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:text="@string/alredy_have_account"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
 </ScrollView>
-
