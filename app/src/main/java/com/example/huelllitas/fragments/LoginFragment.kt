@@ -94,79 +94,85 @@ class LoginFragment : Fragment() {
     }
 
     private fun handleLogin() {
-        val email = emailInput.text.toString().trim()
-        val password = passwordInput.text.toString().trim()
+        Toast.makeText(requireContext(), "Omitiendo login para desarrollo", Toast.LENGTH_SHORT).show()
+        navigateToHome()
 
-        if (!validateFields(email, password)) return
-        val prefs = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
-        val savedEmail= prefs.getString("USER_EMAIL",null)
-        val savedPassword = prefs.getString("USER_PASSWORD",null)
+/* --- CÓDIGO ORIGINAL COMENTADO ---
+val email = emailInput.text.toString().trim()
+val password = passwordInput.text.toString().trim()
 
-        if (email == savedEmail && password == savedPassword) {
-            Toast.makeText(requireContext(), "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-            navigateToHome()
+if (!validateFields(email, password)) return
+val prefs = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+val savedEmail= prefs.getString("USER_EMAIL",null)
+val savedPassword = prefs.getString("USER_PASSWORD",null)
+
+if (email == savedEmail && password == savedPassword) {
+    Toast.makeText(requireContext(), "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+    navigateToHome()
+} else {
+    Toast.makeText(requireContext(), "Usuario no registrado", Toast.LENGTH_SHORT).show()
+}
+
+ */
+}
+
+private fun validateFields(email: String, password: String): Boolean {
+when {
+    email.isEmpty() -> {
+        emailInput.error = "Ingresa tu correo"
+        emailInput.requestFocus()
+        return false
+    }
+    password.isEmpty() -> {
+        passwordInput.error = "Ingresa tu contraseña"
+        passwordInput.requestFocus()
+        return false
+    }
+}
+return true
+}
+
+private fun navigateToHome() {
+parentFragmentManager.beginTransaction()
+    .replace(R.id.fragment_content, HomeFragment())
+    .addToBackStack(null)
+    .commit()
+}
+
+private fun navigateToRegister() {
+parentFragmentManager.beginTransaction()
+    .replace(R.id.fragment_content, RegisterFragment())
+    .addToBackStack(null)
+    .commit()
+}
+private fun navigateToRecoveryPassword() {
+parentFragmentManager.beginTransaction()
+    .replace(R.id.fragment_content, RecoveryPasswordFragment())
+    .addToBackStack(null)
+    .commit()
+}
+private fun signIn(){
+val signInIntent = googleSignInClient.signInIntent
+startActivityForResult(signInIntent,RC_SIGN_IN)
+}
+
+private fun firebaseAuthWithGoogle(idToken: String) {
+val credential = GoogleAuthProvider.getCredential(idToken,null)
+auth.signInWithCredential(credential)
+    .addOnCompleteListener(requireActivity()){ task ->
+        if (task.isSuccessful){
+            Log.d(TAG,"signInWithCredential:success")
+            Toast.makeText(context,"Bienvenido", Toast.LENGTH_SHORT).show()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_content, HomeFragment())
+                .addToBackStack(null)
+                .commit()
         } else {
-            Toast.makeText(requireContext(), "Usuario no registrado", Toast.LENGTH_SHORT).show()
+            Log.w(TAG, "signinWithCredential:failure", task.exception)
+            Toast.makeText(context,"Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
         }
     }
-
-    private fun validateFields(email: String, password: String): Boolean {
-        when {
-            email.isEmpty() -> {
-                emailInput.error = "Ingresa tu correo"
-                emailInput.requestFocus()
-                return false
-            }
-            password.isEmpty() -> {
-                passwordInput.error = "Ingresa tu contraseña"
-                passwordInput.requestFocus()
-                return false
-            }
-        }
-        return true
-    }
-
-    private fun navigateToHome() {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_content, HomeFragment())
-            .addToBackStack(null)
-            .commit()
-    }
-
-    private fun navigateToRegister() {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_content, RegisterFragment())
-            .addToBackStack(null)
-            .commit()
-    }
-    private fun navigateToRecoveryPassword() {
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_content, RecoveryPasswordFragment())
-            .addToBackStack(null)
-            .commit()
-    }
-    private fun signIn(){
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent,RC_SIGN_IN)
-    }
-
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken,null)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(requireActivity()){ task ->
-                if (task.isSuccessful){
-                    Log.d(TAG,"signInWithCredential:success")
-                    Toast.makeText(context,"Bienvenido", Toast.LENGTH_SHORT).show()
-                    parentFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_content, HomeFragment())
-                        .addToBackStack(null)
-                        .commit()
-                } else {
-                    Log.w(TAG, "signinWithCredential:failure", task.exception)
-                    Toast.makeText(context,"Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
+}
 
 //    override fun onStart() {
 //        super.onStart()
@@ -179,21 +185,21 @@ class LoginFragment : Fragment() {
 //        }
 //    }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
-        super.onActivityResult(requestCode, resultCode, data)
+override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == RC_SIGN_IN){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val accountData = task.getResult(ApiException::class.java)!!
-                Log.d(TAG,"firebaseAuthWithGoogle:"+ accountData.id)
-                firebaseAuthWithGoogle(accountData.idToken!!)
-            } catch (e: ApiException){
-                Log.w(TAG, "Google sign in failed", e)
-                Toast.makeText(context,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
+if(requestCode == RC_SIGN_IN){
+    val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+    try {
+        val accountData = task.getResult(ApiException::class.java)!!
+        Log.d(TAG,"firebaseAuthWithGoogle:"+ accountData.id)
+        firebaseAuthWithGoogle(accountData.idToken!!)
+    } catch (e: ApiException){
+        Log.w(TAG, "Google sign in failed", e)
+        Toast.makeText(context,"Error: ${e.message}", Toast.LENGTH_SHORT).show()
     }
+}
+}
 }
 
 

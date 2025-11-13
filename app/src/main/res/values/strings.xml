@@ -27,4 +27,12 @@
     <string name="back_button_description">Volver</string>
     <string name="lastName_label">Apellido</string>
     <string name="address_label">Dirección</string>
+    <string name="featured">Recomendado</string>
+    <string name="see_all">Ver todo</string>
+    <string name="back">Atras</string>
+    <string name="editProfile">Editar perfil</string>
+    <string name="profile_image_desc">imagen del perfil</string>
+    <string name="imageProfile">Imagen del perfil\n</string>
+    <string name="product_image_desc">Descripcion del producto</string>
+    <string name="add_to_favorites">Añadir a favoritos</string>
 </resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header con degradado -->
+        <View
+            android:id="@+id/headerBackground"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Botón de atras -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/back"
+            android:background="@drawable/ic_atras"
+            android:backgroundTint="@color/primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Contenedor de foto de perfil -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profileImageCard"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="60dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/imageProfile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_profile" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botón para cambiar foto -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/changePhotoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera"
+            app:backgroundTint="@color/primary"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@id/profileImageCard"
+            app:layout_constraintEnd_toEndOf="@id/profileImageCard"
+            app:tint="#FFFFFF" />
+
+        <!-- Card del formulario -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/formCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileImageCard">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/editProfile"
+                        android:textSize="14sp"
+                        android:textColor="#808080"
+                        android:padding="8dp"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="#E0E0E0" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/editName"
+                    style="@style/InputField"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/name_label"
+                    android:text=""
+                    android:inputType="textPersonName"/>
+
+                <EditText
+                    android:id="@+id/editLastName"
+                    style="@style/InputField"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/lastName_label"
+                    android:text=""
+                    android:inputType="textPersonName"/>
+
+                <EditText
+                    android:id="@+id/editAddress"
+                    style="@style/InputField"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/address_label"
+                    android:text=""
+                    android:inputType="text"/>
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    style="@style/InputField"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/email_label"
+                    android:text=""
+                    android:inputType="textEmailAddress"/>
+
+                <EditText
+                    android:id="@+id/editPassword"
+                    style="@style/InputField"
+                    android:layout_marginTop="12dp"
+                    android:hint="@string/password_label"
+                    android:inputType="textPassword"/>
+
+                <Button
+                    android:id="@+id/buttonEdit"
+                    style="@style/PrimaryButton"
+                    android:text="@string/editProfile"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/alredy_have_account"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+

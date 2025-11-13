@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+    Este degradado va de transparente en la parte superior
+    a un negro semitransparente en la parte inferior.
+    El ángulo 270 hace que el degradado sea vertical.
+    -->
+    <gradient
+        android:angle="270"
+        android:startColor="#00000000"
+        android:centerColor="#40000000"
+        android:endColor="#D9000000"
+        android:type="linear" />
+
+</shape>

@@ -6,6 +6,7 @@
     <color name="secondary">#FD6E2E</color>
     <color name="gray">#7C8BA0</color>
     <color name="bg_inputs">#F5F9FE</color>
-
+    <color name="light_gray">#D3D3D3</color>
+    <color name="pink">#4DFF4081</color>
 
 </resources>
