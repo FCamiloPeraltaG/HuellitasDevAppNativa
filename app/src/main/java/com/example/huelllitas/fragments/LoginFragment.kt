@@ -94,10 +94,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun handleLogin() {
-        Toast.makeText(requireContext(), "Omitiendo login para desarrollo", Toast.LENGTH_SHORT).show()
-        navigateToHome()
 
-/* --- CÓDIGO ORIGINAL COMENTADO ---
+
 val email = emailInput.text.toString().trim()
 val password = passwordInput.text.toString().trim()
 
@@ -113,7 +111,7 @@ if (email == savedEmail && password == savedPassword) {
     Toast.makeText(requireContext(), "Usuario no registrado", Toast.LENGTH_SHORT).show()
 }
 
- */
+
 }
 
 private fun validateFields(email: String, password: String): Boolean {

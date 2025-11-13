@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Huelllitas</string>
     <string name="login_title">Iniciar Sesión</string>
-    <string name="login_subtitle">Para registrarte ingresa los siguientes datos</string>
+    <string name="login_subtitle">Para iniciar sesión, ingresa los siguientes datos</string>
     <string name="login_buton">Ingresar</string>
     <string name="edit_profile">Editar perfil</string>
     <string name="orders">Pedidos</string>
